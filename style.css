@@ -151,7 +151,7 @@ body {
   width: 32px; height: 32px;
   border: 1px solid rgba(0,212,255,0.5);
   mix-blend-mode: screen;
-  transition: width 0.25s ease, height 0.25s ease;
+  transition: left 0.1s linear, top 0.1s linear, width 0.25s ease, height 0.25s ease;
 }
 .cursor.hover { width: 14px; height: 14px; background: #fff; }
 .cursor-follower.hover { width: 46px; height: 46px; }
@@ -2286,4 +2286,10 @@ body {
   .steps-flow { flex-wrap: wrap; gap: 24px; }
   .step-item:not(:last-child)::after { display: none; }
   .yoy-controls { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  canvas#particleCanvas { display: none; }
+  .cursor, .cursor-follower { display: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
