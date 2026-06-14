@@ -23,22 +23,12 @@
   /* ---- CURSOR ---- */
   const cursor = document.querySelector('.cursor');
   const follower = document.querySelector('.cursor-follower');
-  let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
 
   document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    if (cursor) { cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px'; }
-  });
-
-  (function animateFollower() {
-    if (follower) {
-      followerX += (mouseX - followerX) * 0.1;
-      followerY += (mouseY - followerY) * 0.1;
-      follower.style.left = followerX + 'px';
-      follower.style.top = followerY + 'px';
-    }
-    requestAnimationFrame(animateFollower);
-  })();
+    const x = e.clientX, y = e.clientY;
+    if (cursor)   { cursor.style.left   = x + 'px'; cursor.style.top   = y + 'px'; }
+    if (follower) { follower.style.left = x + 'px'; follower.style.top = y + 'px'; }
+  }, { passive: true });
 
   function addHoverCursor(selector) {
     document.querySelectorAll(selector).forEach(el => {
@@ -48,14 +38,15 @@
   }
   addHoverCursor('a, button, .faq-question, .curr-btn, .prod-btn, .back-to-top, .report-btn');
 
-  /* ---- PARTICLES ---- */
+  /* ---- PARTICLES — throttled to 20fps, pauses on blur ---- */
   const canvas = document.getElementById('particleCanvas');
   if (canvas) {
-    const ctx = canvas.getContext('2d', { alpha: true });
+    const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true });
     const isMobile = window.innerWidth < 768;
     const isLowEnd = navigator.hardwareConcurrency <= 4 || isMobile;
-    const COUNT = isLowEnd ? 30 : 55;
-    let w, h, particles = [];
+    const COUNT = isLowEnd ? 20 : 40;
+    const FRAME_MS = 1000 / 20;
+    let w, h, particles = [], raf, lastFrame = 0;
 
     function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
     resize();
@@ -67,16 +58,19 @@
         r: Math.random() * 1.2 + 0.2,
         dx: (Math.random() - 0.5) * 0.18,
         dy: (Math.random() - 0.5) * 0.18,
-        alpha: Math.random() * 0.55 + 0.1,
+        alpha: Math.random() * 0.45 + 0.08,
         color: Math.random() < 0.94 ? '255,255,255' : '0,212,255'
       };
     }
     for (let i = 0; i < COUNT; i++) particles.push(mkP());
 
-    let raf;
-    function drawParticles() {
+    function drawParticles(now) {
+      raf = requestAnimationFrame(drawParticles);
+      if (now - lastFrame < FRAME_MS) return;
+      lastFrame = now;
       ctx.clearRect(0, 0, w, h);
-      particles.forEach(p => {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
@@ -84,13 +78,15 @@
         p.x += p.dx; p.y += p.dy;
         if (p.x < -2) p.x = w + 2; else if (p.x > w + 2) p.x = -2;
         if (p.y < -2) p.y = h + 2; else if (p.y > h + 2) p.y = -2;
-      });
-      raf = requestAnimationFrame(drawParticles);
+      }
     }
-    drawParticles();
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) cancelAnimationFrame(raf); else drawParticles();
-    });
+    raf = requestAnimationFrame(drawParticles);
+
+    const pause  = () => cancelAnimationFrame(raf);
+    const resume = () => { lastFrame = 0; raf = requestAnimationFrame(drawParticles); };
+    document.addEventListener('visibilitychange', () => document.hidden ? pause() : resume());
+    window.addEventListener('blur',  pause,  { passive: true });
+    window.addEventListener('focus', resume, { passive: true });
   }
 
   /* ---- NAVBAR ---- */
