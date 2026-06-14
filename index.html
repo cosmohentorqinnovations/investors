@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cosmohentorq Innovations — Investor & Supporter Platform. Understand what we're building, why it matters, and how to participate." />
+  <title>Cosmohentorq — Investor & Supporter Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- QR Intro Overlay -->
+  <div id="qrIntro" class="qr-intro">
+    <div class="qr-box">
+      <svg class="qr-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+        <!-- Top-left finder -->
+        <rect x="10" y="10" width="56" height="56" fill="none" stroke="#fff" stroke-width="4"/>
+        <rect x="20" y="20" width="36" height="36" fill="#fff"/>
+        <rect x="28" y="28" width="20" height="20" fill="#000"/>
+        <!-- Top-right finder -->
+        <rect x="134" y="10" width="56" height="56" fill="none" stroke="#fff" stroke-width="4"/>
+        <rect x="144" y="20" width="36" height="36" fill="#fff"/>
+        <rect x="152" y="28" width="20" height="20" fill="#000"/>
+        <!-- Bottom-left finder -->
+        <rect x="10" y="134" width="56" height="56" fill="none" stroke="#fff" stroke-width="4"/>
+        <rect x="20" y="144" width="36" height="36" fill="#fff"/>
+        <rect x="28" y="152" width="20" height="20" fill="#000"/>
+        <!-- Timing strips -->
+        <rect x="74" y="10" width="4" height="4" fill="#fff"/><rect x="82" y="10" width="4" height="4" fill="#fff"/>
+        <rect x="90" y="10" width="4" height="4" fill="#fff"/><rect x="98" y="10" width="4" height="4" fill="#fff"/>
+        <rect x="106" y="10" width="4" height="4" fill="#fff"/><rect x="114" y="10" width="4" height="4" fill="#fff"/>
+        <rect x="122" y="10" width="4" height="4" fill="#fff"/>
+        <rect x="10" y="74" width="4" height="4" fill="#fff"/><rect x="10" y="82" width="4" height="4" fill="#fff"/>
+        <rect x="10" y="90" width="4" height="4" fill="#fff"/><rect x="10" y="98" width="4" height="4" fill="#fff"/>
+        <rect x="10" y="106" width="4" height="4" fill="#fff"/><rect x="10" y="114" width="4" height="4" fill="#fff"/>
+        <rect x="10" y="122" width="4" height="4" fill="#fff"/>
+        <!-- Data modules (random pattern) -->
+        <rect x="74" y="74" width="6" height="6" fill="#fff"/><rect x="86" y="74" width="6" height="6" fill="#fff"/>
+        <rect x="98" y="74" width="6" height="6" fill="#fff"/><rect x="116" y="74" width="6" height="6" fill="#fff"/>
+        <rect x="74" y="86" width="6" height="6" fill="#fff"/><rect x="92" y="86" width="6" height="6" fill="#fff"/>
+        <rect x="110" y="86" width="6" height="6" fill="#fff"/><rect x="122" y="86" width="6" height="6" fill="#fff"/>
+        <rect x="80" y="98" width="6" height="6" fill="#fff"/><rect x="98" y="98" width="6" height="6" fill="#fff"/>
+        <rect x="116" y="98" width="6" height="6" fill="#fff"/><rect x="128" y="98" width="6" height="6" fill="#fff"/>
+        <rect x="74" y="110" width="6" height="6" fill="#fff"/><rect x="86" y="110" width="6" height="6" fill="#fff"/>
+        <rect x="104" y="110" width="6" height="6" fill="#fff"/><rect x="122" y="110" width="6" height="6" fill="#fff"/>
+        <rect x="80" y="122" width="6" height="6" fill="#fff"/><rect x="92" y="122" width="6" height="6" fill="#fff"/>
+        <rect x="116" y="122" width="6" height="6" fill="#fff"/><rect x="134" y="122" width="6" height="6" fill="#fff"/>
+        <rect x="74" y="134" width="6" height="6" fill="#fff"/><rect x="98" y="134" width="6" height="6" fill="#fff"/>
+        <rect x="110" y="134" width="6" height="6" fill="#fff"/><rect x="128" y="134" width="6" height="6" fill="#fff"/>
+        <rect x="86" y="146" width="6" height="6" fill="#fff"/><rect x="104" y="146" width="6" height="6" fill="#fff"/>
+        <rect x="122" y="146" width="6" height="6" fill="#fff"/><rect x="134" y="146" width="6" height="6" fill="#fff"/>
+        <rect x="74" y="158" width="6" height="6" fill="#fff"/><rect x="92" y="158" width="6" height="6" fill="#fff"/>
+        <rect x="110" y="158" width="6" height="6" fill="#fff"/><rect x="128" y="158" width="6" height="6" fill="#fff"/>
+        <rect x="80" y="170" width="6" height="6" fill="#fff"/><rect x="98" y="170" width="6" height="6" fill="#fff"/>
+        <rect x="116" y="170" width="6" height="6" fill="#fff"/>
+        <!-- Scan line -->
+        <rect class="qr-scanline" x="10" y="10" width="180" height="3" fill="rgba(255,255,255,0.6)"/>
+      </svg>
+      <div class="qr-label">invest.cosmohentorq.com</div>
+      <div class="qr-status" id="qrStatus">Scanning...</div>
+    </div>
+  </div>
+
+  <canvas id="particleCanvas"></canvas>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="logo-white.png" alt="Cosmohentorq" class="nav-logo-img" />
+        <div class="logo-text-wrap">
+          <span class="logo-text">COSMOHENTORQ</span>
+          <span class="logo-tagline">Investor Platform</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#why"         class="nav-link">Why</a>
+        <a href="#products"    class="nav-link">Products</a>
+        <a href="#team"        class="nav-link">Team</a>
+        <a href="#market"      class="nav-link">Market</a>
+        <a href="#roadmap"     class="nav-link">Roadmap</a>
+        <a href="#risks"       class="nav-link">Risks</a>
+        <a href="#participate" class="nav-link">Participate</a>
+        <a href="https://cosmohentorq.com" target="_blank" rel="noopener" class="nav-link nav-link-ext">Main Site ↗</a>
+        <a href="#explorer"    class="nav-link nav-cta">Explorer</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="home">
+    <div class="hero-glow-track" id="heroGlow"></div>
+    <div class="hero-content container">
+      <div class="hero-badge reveal" data-delay="0">
+        <span>Startup India · DIPP166809</span>
+        <span class="badge-dot"></span>
+        <span>Startup TN · STM83197</span>
+        <span class="badge-dot"></span>
+        <span>Incorporated May 2024</span>
+      </div>
+      <h1 class="hero-title reveal" data-delay="100">
+        Why<br><span class="gradient-text">Cosmohentorq?</span>
+      </h1>
+      <p class="hero-tagline reveal" data-delay="150">Building DeepTech from India</p>
+      <p class="hero-subtitle reveal" data-delay="200">
+        This is not a fundraising pitch. It is an honest conversation about what we are building, where we are today, and what could happen if we get this right.
+      </p>
+      <div class="hero-actions reveal" data-delay="300">
+        <a href="#why" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Read the Story
+        </a>
+        <a href="#explorer" class="btn btn-secondary">Run Simulation</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ==================== CURRENT PROGRESS ==================== -->
+  <section class="progress-section" id="progress">
+    <div class="container">
+      <div class="progress-header">
+        <span class="section-label">Current Status</span>
+        <h2 class="section-title" style="margin-bottom:6px;">Where We Are Today</h2>
+        <p style="font-size:0.88rem; color:var(--text-muted);">Pre-commercial stage. These are facts — not projections.</p>
+      </div>
+      <div class="progress-grid">
+        <div class="prog-stat">
+          <div class="prog-val">May 2024</div>
+          <div class="prog-label">Founded</div>
+        </div>
+        <div class="prog-stat">
+          <div class="prog-val">2</div>
+          <div class="prog-label">Govt. Recognitions</div>
+          <div class="prog-sub">Startup India · StartupTN</div>
+        </div>
+        <div class="prog-stat">
+          <div class="prog-val">J.U.L.I.E</div>
+          <div class="prog-label">Flagship Product</div>
+          <div class="prog-sub">Enterprise AI · In development</div>
+        </div>
+        <div class="prog-stat">
+          <div class="prog-val">4+</div>
+          <div class="prog-label">Interns Trained</div>
+          <div class="prog-sub">2024–2025 cohort</div>
+        </div>
+        <div class="prog-stat">
+          <div class="prog-val">Pre-commercial</div>
+          <div class="prog-label">Current Stage</div>
+          <div class="prog-sub">Beta testing in progress</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY ==================== -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">The Foundation</span>
+        <h2 class="section-title reveal" data-delay="100">Why We Exist</h2>
+        <p class="section-subtitle reveal" data-delay="200">Six honest reasons why this company, this founder, this moment, and this geography are worth paying attention to.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card glass-card reveal" data-delay="0">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="15" x2="22" y2="15"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="15" x2="4" y2="15"/></svg>
+          </div>
+          <h3>Why AI</h3>
+          <p>Enterprise AI is where cloud computing was in 2008. Companies that build core infrastructure now will have compounding advantages in data, integrations, and customer trust that late entrants cannot replicate with money alone.</p>
+        </div>
+        <div class="why-card glass-card reveal" data-delay="80">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>Why India</h3>
+          <p>India produces 1.5 million engineering graduates annually. AI adoption in Indian enterprises is accelerating faster than in any other market. The cost-to-talent ratio here is unmatched globally. We do not need to relocate to build a world-class company.</p>
+        </div>
+        <div class="why-card glass-card reveal" data-delay="160">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Why Tamil Nadu</h3>
+          <p>Tamil Nadu's engineering output, Zoho's success, IIT Madras's Research Park, and StartupTN's ecosystem support make Chennai a credible DeepTech hub. We are in the right geography at the right time.</p>
+        </div>
+        <div class="why-card glass-card reveal" data-delay="240">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Why DeepTech</h3>
+          <p>Apps that wrap existing APIs have no moat. Cosmohentorq is building at the architecture level — proprietary model design, enterprise-grade AI infrastructure, and vertical-specific intelligence. Moats built here are defensible.</p>
+        </div>
+        <div class="why-card glass-card reveal" data-delay="320">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Why Now</h3>
+          <p>Indian enterprise software sales cycles have shortened dramatically post-2023. AI procurement budgets are being allocated for the first time. The 2024–2027 window is when first-mover advantages in enterprise AI get locked in.</p>
+        </div>
+        <div class="why-card glass-card reveal" data-delay="400">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <h3>Why Cosmohentorq</h3>
+          <p>Because someone from Tamil Nadu should do this. Cosmohentorq is proving that a world-class AI company can be built from India — not as a services company, but as a genuine product company with a global ambition.</p>
+        </div>
+      </div>
+      <div class="vision-block reveal" data-delay="100">
+        <blockquote class="vision-quote-large">
+          "We are not trying to be the Indian version of something American. We are trying to build something the world has not seen yet — and we are doing it from here."
+        </blockquote>
+        <p class="vision-attribution">— Hariharan Murugan, Founder &amp; CEO, Cosmohentorq Innovations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOUNDER ==================== -->
+  <section class="founder-section" id="founder">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">The Builder</span>
+        <h2 class="section-title reveal" data-delay="100">Founder Profile</h2>
+        <p class="section-subtitle reveal" data-delay="200">An honest independent assessment based on observable work, products, and recognition. Not a guarantee of outcomes.</p>
+      </div>
+      <div class="founder-grid">
+        <div class="founder-bio reveal-left">
+          <div class="founder-avatar-wrap">
+            <div class="founder-avatar">HM</div>
+          </div>
+          <h3 class="founder-name">Hariharan Murugan</h3>
+          <p class="founder-role">Founder, CEO &amp; Tech Lead · Cosmohentorq Innovations Pvt. Ltd.</p>
+          <p class="founder-desc">Hariharan founded Cosmohentorq in May 2024 at an early age and has since obtained dual government recognition, built JULIE's core AI architecture, shipped a public-facing product website, launched an intern program, and directed an original short film — all simultaneously. The breadth of capability is unusual. The depth is still being proven in the market.</p>
+          <div class="founder-tags">
+            <span class="f-tag">AI Architecture</span>
+            <span class="f-tag">Full-Stack</span>
+            <span class="f-tag">Product Strategy</span>
+            <span class="f-tag">LLMOps</span>
+            <span class="f-tag">UI/UX</span>
+            <span class="f-tag">Film Direction</span>
+          </div>
+          <div class="founder-strengths">
+            <div class="strength-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Builds from first principles — not derivative architectures</span>
+            </div>
+            <div class="strength-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Unusual combination of technical depth and product thinking</span>
+            </div>
+            <div class="strength-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>High ownership — runs engineering, design, strategy, and culture</span>
+            </div>
+            <div class="strength-item growth">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Growth area: Building scalable sales and GTM capability beyond the founder</span>
+            </div>
+            <div class="strength-item growth">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Growth area: Commercial track record — pre-revenue, proof is still ahead</span>
+            </div>
+          </div>
+        </div>
+        <div class="founder-due-dil reveal-right">
+          <div class="fdd-block glass-card fdd-verified">
+            <div class="fdd-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              What You Can Verify
+            </div>
+            <div class="fdd-items">
+              <a href="https://www.mca.gov.in" target="_blank" rel="noopener" class="fdd-item-link">
+                Company registered May 2024 — verify on MCA21
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://www.startupindia.gov.in" target="_blank" rel="noopener" class="fdd-item-link">
+                Startup India DIPP166809 — verify on startupindia.gov.in
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <div class="fdd-item">StartupTN STM83197 — government issued recognition</div>
+              <div class="fdd-item">Public-facing website and product presence live</div>
+              <div class="fdd-item">Intern program announced and active (4+ interns trained)</div>
+              <div class="fdd-item">Original short film (STOPWATCH) in production</div>
+            </div>
+            <div class="last-updated">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Last updated: June 2026
+            </div>
+          </div>
+          <div class="fdd-block glass-card fdd-unproven" style="margin-top:14px;">
+            <div class="fdd-label fdd-label-warn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              What Is Not Yet Proven
+            </div>
+            <div class="fdd-items">
+              <div class="fdd-item fdd-item-warn">Zero commercial revenue generated to date</div>
+              <div class="fdd-item fdd-item-warn">No paying customers for JULIE or YAKO</div>
+              <div class="fdd-item fdd-item-warn">No institutional funding or third-party valuation</div>
+              <div class="fdd-item fdd-item-warn">Sales and GTM capability at scale — unproven</div>
+              <div class="fdd-item fdd-item-warn">Team depth beyond the founder — limited</div>
+              <div class="fdd-item fdd-item-warn">Technology advantage over funded global competitors — not benchmarked</div>
+            </div>
+          </div>
+          <div class="fdd-note">This is an honest due-diligence summary. There are no external ratings here. The founder is capable and early — the commercial question is still open.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MARKET ==================== -->
+  <section class="market-section" id="market">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">Market Context</span>
+        <h2 class="section-title reveal" data-delay="100">The Industry Backdrop</h2>
+        <p class="section-subtitle reveal" data-delay="200">Market context only. What Cosmohentorq can realistically capture is a small fraction of these numbers — shown separately below.</p>
+      </div>
+      <div class="market-stats-grid reveal" data-delay="0">
+        <div class="mstat glass-card">
+          <div class="mstat-num gradient-text">$1.85T</div>
+          <div class="mstat-label">Global AI Market by 2030</div>
+          <div class="mstat-src">36.8% CAGR · Grand View Research</div>
+        </div>
+        <div class="mstat glass-card">
+          <div class="mstat-num gradient-text">$17B</div>
+          <div class="mstat-label">India AI Market by 2027</div>
+          <div class="mstat-src">25–35% CAGR · NASSCOM</div>
+        </div>
+        <div class="mstat glass-card">
+          <div class="mstat-num gradient-text">$45B</div>
+          <div class="mstat-label">FoodTech AI Global by 2035</div>
+          <div class="mstat-src">YAKO's target vertical</div>
+        </div>
+        <div class="mstat glass-card">
+          <div class="mstat-num gradient-text">68%</div>
+          <div class="mstat-label">Enterprises adopting AI by 2025</div>
+          <div class="mstat-src">McKinsey Global Survey</div>
+        </div>
+      </div>
+
+      <!-- Revenue teaser — detail is in the simulation -->
+      <div class="rev-teaser glass-card reveal" data-delay="100">
+        <div class="rev-teaser-inner">
+          <div>
+            <h3>What Could Cosmohentorq Earn?</h3>
+            <p>We do not put speculative numbers on this page. Model them yourself in the simulation — conservative, base, optimistic, and fail scenarios with year-by-year breakdowns and a comparison against FD, PPF, and Nifty 50.</p>
+          </div>
+          <a href="#explorer" class="btn btn-secondary" style="flex-shrink:0; white-space:nowrap;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Run Simulation
+          </a>
+        </div>
+      </div>
+
+      <!-- Market forecast chart -->
+      <div class="chart-container glass-card reveal" data-delay="150">
+        <div class="chart-header">
+          <h3>India AI Market Forecast vs Cosmohentorq Base Case ARR</h3>
+          <div class="chart-legend">
+            <span class="legend-dot" style="background:#00d4ff"></span><span>India AI Market ($B)</span>
+            <span class="legend-dot legend-dot-2"></span><span>COSMO Base Case ARR (₹Cr)</span>
+          </div>
+        </div>
+        <div class="chart-wrap"><svg id="marketChart" viewBox="0 0 820 260" class="market-svg" overflow="visible"></svg></div>
+        <p class="chart-note">India AI market: NASSCOM estimates. Cosmohentorq ARR: Base case projections. Right axis = Cosmohentorq ARR in ₹Cr. All estimates — not guarantees.</p>
+      </div>
+
+      <!-- Competitive Landscape -->
+      <div class="comp-landscape-wrap glass-card reveal" data-delay="80">
+        <h3>Competitive Positioning — Where JULIE Sits</h3>
+        <p>The enterprise AI market has well-funded incumbents. JULIE's differentiation is on two axes: India-first architecture and true enterprise depth. This is where we believe we compete.</p>
+        <svg class="comp-svg" viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+          <!-- Background -->
+          <rect width="700" height="340" fill="transparent"/>
+          <!-- Quadrant lines -->
+          <line x1="350" y1="20" x2="350" y2="300" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="60" y1="170" x2="640" y2="170" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <!-- Axis labels -->
+          <text x="350" y="12" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif" text-anchor="middle" font-weight="600">HIGH ENTERPRISE DEPTH</text>
+          <text x="350" y="320" fill="rgba(255,255,255,0.2)" font-size="10" font-family="Inter,sans-serif" text-anchor="middle">LOW ENTERPRISE DEPTH</text>
+          <text x="40" y="174" fill="rgba(255,255,255,0.2)" font-size="10" font-family="Inter,sans-serif" text-anchor="middle" transform="rotate(-90,40,174)">LOW INDIA FOCUS</text>
+          <text x="665" y="174" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif" text-anchor="middle" transform="rotate(90,665,174)" font-weight="600">HIGH INDIA FOCUS</text>
+          <!-- Quadrant labels (faint) -->
+          <text x="200" y="100" fill="rgba(255,255,255,0.06)" font-size="11" font-family="Inter,sans-serif" text-anchor="middle">Global Enterprise AI</text>
+          <text x="510" y="100" fill="rgba(0,212,255,0.08)" font-size="11" font-family="Inter,sans-serif" text-anchor="middle">India Deep Enterprise</text>
+          <text x="200" y="250" fill="rgba(255,255,255,0.05)" font-size="11" font-family="Inter,sans-serif" text-anchor="middle">Generic / Consumer AI</text>
+          <text x="510" y="250" fill="rgba(255,255,255,0.05)" font-size="11" font-family="Inter,sans-serif" text-anchor="middle">India SME Tools</text>
+          <!-- Company dots -->
+          <!-- OpenAI: low India, high enterprise -->
+          <circle cx="180" cy="70" r="7" fill="rgba(255,255,255,0.25)"/>
+          <text x="192" y="74" fill="rgba(255,255,255,0.45)" font-size="11" font-family="Inter,sans-serif">OpenAI / ChatGPT</text>
+          <!-- Microsoft Copilot: medium India, high enterprise -->
+          <circle cx="250" cy="90" r="7" fill="rgba(255,255,255,0.2)"/>
+          <text x="262" y="94" fill="rgba(255,255,255,0.4)" font-size="11" font-family="Inter,sans-serif">Microsoft Copilot</text>
+          <!-- Google Workspace: low-mid India, mid enterprise -->
+          <circle cx="190" cy="145" r="7" fill="rgba(255,255,255,0.18)"/>
+          <text x="202" y="149" fill="rgba(255,255,255,0.38)" font-size="11" font-family="Inter,sans-serif">Google Workspace AI</text>
+          <!-- Zoho AI: high India, mid enterprise -->
+          <circle cx="510" cy="155" r="7" fill="rgba(255,255,255,0.22)"/>
+          <text x="522" y="159" fill="rgba(255,255,255,0.45)" font-size="11" font-family="Inter,sans-serif">Zoho AI</text>
+          <!-- Generic Indian SaaS: high India, low enterprise -->
+          <circle cx="490" cy="240" r="6" fill="rgba(255,255,255,0.12)"/>
+          <text x="502" y="244" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Indian SaaS tools</text>
+          <!-- JULIE: high India, high enterprise — HIGHLIGHTED -->
+          <circle cx="555" cy="72" r="12" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1.5"/>
+          <circle cx="555" cy="72" r="5" fill="#00d4ff"/>
+          <text x="572" y="68" fill="#00d4ff" font-size="11" font-family="Inter,sans-serif" font-weight="700">J.U.L.I.E</text>
+          <text x="572" y="82" fill="rgba(0,212,255,0.6)" font-size="9" font-family="Inter,sans-serif">Cosmohentorq</text>
+          <!-- Target zone circle -->
+          <ellipse cx="555" cy="85" rx="90" ry="60" fill="none" stroke="rgba(0,212,255,0.07)" stroke-width="1" stroke-dasharray="4 3"/>
+        </svg>
+        <p class="comp-disclaimer">Positioning is based on publicly available product information and our own assessment. Not a validated third-party analysis. Competitor feature sets evolve. This represents our view of where JULIE is designed to compete — not a proven benchmark.</p>
+      </div>
+
+      <!-- Unit Economics -->
+      <div class="unit-econ-wrap glass-card reveal" data-delay="120">
+        <h3>Unit Economics Model — JULIE (Estimated)</h3>
+        <p>Before investing in a company, ask: does this business make financial sense at the unit level? Here is what the numbers look like for one JULIE enterprise client at our target pricing.</p>
+        <div class="unit-econ-grid">
+          <div class="ue-card">
+            <div class="ue-val">₹1.2L</div>
+            <div class="ue-label">CAC</div>
+            <div class="ue-sub">Cost to acquire one enterprise client (est.)</div>
+          </div>
+          <div class="ue-card">
+            <div class="ue-val">₹6L</div>
+            <div class="ue-label">Average Contract Value</div>
+            <div class="ue-sub">Annual (₹50K/mo base tier)</div>
+          </div>
+          <div class="ue-card">
+            <div class="ue-val">5:1</div>
+            <div class="ue-label">LTV / CAC Ratio</div>
+            <div class="ue-sub">At 3-year average retention</div>
+          </div>
+          <div class="ue-card">
+            <div class="ue-val">~8 mo</div>
+            <div class="ue-label">Payback Period</div>
+            <div class="ue-sub">Time to recover acquisition cost</div>
+          </div>
+          <div class="ue-card">
+            <div class="ue-val">70%+</div>
+            <div class="ue-label">Target Gross Margin</div>
+            <div class="ue-sub">SaaS model, post infra costs</div>
+          </div>
+          <div class="ue-card">
+            <div class="ue-val">15–25%</div>
+            <div class="ue-label">Target Churn (Year 1)</div>
+            <div class="ue-sub">Enterprise churn is lower than SME</div>
+          </div>
+        </div>
+        <p class="ue-disclaimer">All figures are forward-looking estimates. Not actuals. JULIE has not generated revenue. These model what the unit economics would look like if the product is successfully commercialised at target pricing. Real outcomes will differ.</p>
+      </div>
+
+      <!-- ARR Buildout -->
+      <div class="arr-buildout-wrap glass-card reveal" data-delay="160">
+        <h3>ARR Buildout — Base Case Projection</h3>
+        <p>How revenue builds from zero to target ARR in the base (30% probability) scenario. Year × customers × ACV = ARR. Churn applied each year.</p>
+        <div style="overflow-x:auto;">
+          <table class="arr-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>New Customers</th>
+                <th>Total Customers</th>
+                <th>Avg ACV (₹/yr)</th>
+                <th>Gross ARR</th>
+                <th>Churn (15%)</th>
+                <th>Net ARR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>2025</td><td>0</td><td>0</td><td>—</td><td>₹0</td><td>—</td><td>₹0</td></tr>
+              <tr><td>2026</td><td>3</td><td>3</td><td>₹6L</td><td>₹18L</td><td>—</td><td>₹18L</td></tr>
+              <tr class="arr-hl"><td>2027</td><td>8</td><td>10</td><td>₹7L</td><td>₹70L</td><td>₹10.5L</td><td>₹59.5L</td></tr>
+              <tr><td>2028</td><td>15</td><td>22</td><td>₹8L</td><td>₹1.76Cr</td><td>₹26.4L</td><td>₹1.5Cr</td></tr>
+              <tr><td>2029</td><td>22</td><td>38</td><td>₹9L</td><td>₹3.42Cr</td><td>₹51.3L</td><td>₹2.9Cr</td></tr>
+              <tr class="arr-hl"><td>2030</td><td>30</td><td>58</td><td>₹10L</td><td>₹5.8Cr</td><td>₹87L</td><td>₹4.93Cr</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="arr-disclaimer">These are base-case projections (30% probability scenario). Conservative case = approximately 0.3× these numbers. Optimistic case = approximately 2×. Churn, ACV growth, and customer acquisition rates are assumptions. Not financial advice.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCTS ==================== -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">Product Portfolio</span>
+        <h2 class="section-title reveal" data-delay="100">What We're Building</h2>
+        <p class="section-subtitle reveal" data-delay="200">Two products at different stages. One flagship in active development. One concept being validated.</p>
+      </div>
+
+      <!-- JULIE -->
+      <div class="product-deep glass-card reveal" data-delay="0">
+        <div class="product-deep-header">
+          <div class="pd-label-row">
+            <div class="product-deep-label active-label">
+              <div class="julie-atom"><div class="julie-nucleus"></div><div class="julie-orbit orbit-1"><div class="julie-electron"></div></div><div class="julie-orbit orbit-2"><div class="julie-electron"></div></div></div>
+              Flagship · Active Development
+            </div>
+          </div>
+          <div class="product-deep-scores">
+            <div class="mini-score"><div class="mini-score-bar"><div class="mini-score-fill msf-1" style="width:88%"></div></div><span>Technology Architecture <strong>88</strong>/100</span></div>
+            <div class="mini-score"><div class="mini-score-bar"><div class="mini-score-fill msf-1" style="width:72%"></div></div><span>Market Fit (estimated) <strong>72</strong>/100</span></div>
+            <div class="mini-score"><div class="mini-score-bar"><div class="mini-score-fill msf-2" style="width:65%"></div></div><span>Product Readiness (now) <strong>65</strong>/100</span></div>
+            <div class="mini-score"><div class="mini-score-bar"><div class="mini-score-fill msf-3" style="width:42%"></div></div><span>Commercial Track Record <strong>42</strong>/100</span></div>
+          </div>
+        </div>
+        <div class="product-deep-body">
+          <div class="product-deep-left">
+            <h2 class="product-deep-title gradient-text">J.U.L.I.E</h2>
+            <p class="product-deep-full">JSON Understandable Language Intelligence Engine</p>
+            <p class="product-deep-desc">Cosmohentorq's flagship enterprise AI platform. Designed from first principles for agentic intelligence, deep enterprise integration, and LLMOps-native deployment. JULIE is not a chatbot wrapper. It is an enterprise intelligence substrate with a proprietary JSON-native interaction protocol.</p>
+            <div class="product-features">
+              <div class="pf-item"><span class="pf-dot"></span>Enterprise Knowledge Systems &amp; Agentic AI</div>
+              <div class="pf-item"><span class="pf-dot"></span>LLMOps — Model lifecycle management</div>
+              <div class="pf-item"><span class="pf-dot"></span>Infrastructure Intelligence</div>
+              <div class="pf-item"><span class="pf-dot"></span>JSON-native interaction protocol</div>
+            </div>
+          </div>
+          <div class="product-deep-right">
+            <div class="product-analysis-card">
+              <h4>Revenue Model Potential</h4>
+              <div class="rev-row"><span>SaaS Enterprise License</span><span class="rev-badge high">High</span></div>
+              <div class="rev-row"><span>API Usage / Pay-per-call</span><span class="rev-badge high">High</span></div>
+              <div class="rev-row"><span>Custom Model Training</span><span class="rev-badge med">Medium</span></div>
+              <div class="rev-row"><span>White-Label Platform</span><span class="rev-badge low">Exploratory</span></div>
+            </div>
+            <div class="product-analysis-card" style="margin-top:14px;">
+              <h4>Honest Assessment</h4>
+              <p class="analysis-text">JULIE's architecture is technically sound. The commercial question — whether Indian enterprises will pay for a local AI platform over global alternatives like OpenAI or Google — is unproven. This is the primary risk and the primary opportunity. If the answer is yes, the market is substantial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JULIE: Mockups + Comparison Table -->
+      <div class="julie-visuals reveal" data-delay="60">
+        <div class="julie-visuals-grid">
+
+          <!-- SVG Mockup: JULIE Chat Interface -->
+          <div class="julie-mockup glass-card">
+            <div class="mockup-label">JULIE Enterprise Interface — Concept</div>
+            <svg viewBox="0 0 480 300" class="mockup-svg" xmlns="http://www.w3.org/2000/svg">
+              <!-- Window chrome -->
+              <rect x="0" y="0" width="480" height="300" rx="8" fill="#080808"/>
+              <rect x="0" y="0" width="480" height="32" rx="8" fill="#111"/>
+              <rect x="0" y="24" width="480" height="8" fill="#111"/>
+              <circle cx="16" cy="16" r="5" fill="#222"/>
+              <circle cx="32" cy="16" r="5" fill="#222"/>
+              <circle cx="48" cy="16" r="5" fill="#222"/>
+              <text x="240" y="21" fill="#3a3a3a" font-size="10" font-family="monospace" text-anchor="middle">JULIE Enterprise v1.0 · Connected</text>
+              <!-- Status bar -->
+              <rect x="0" y="32" width="480" height="24" fill="#0d0d0d"/>
+              <circle cx="16" cy="44" r="3" fill="#888"/>
+              <text x="26" y="48" fill="#888" font-size="9" font-family="monospace">ACTIVE</text>
+              <text x="110" y="48" fill="#333" font-size="9" font-family="monospace">Engine: Multi-Foundation · Mode: Enterprise</text>
+              <!-- Left sidebar -->
+              <rect x="0" y="56" width="120" height="244" fill="#0a0a0a"/>
+              <text x="12" y="76" fill="#2e2e2e" font-size="8" font-family="monospace">MODULES</text>
+              <rect x="8" y="82" width="104" height="22" rx="4" fill="rgba(255,255,255,0.04)"/>
+              <text x="14" y="97" fill="#bbb" font-size="9" font-family="monospace">KnowSys</text>
+              <text x="14" y="120" fill="#2e2e2e" font-size="9" font-family="monospace">  InfraAI</text>
+              <text x="14" y="140" fill="#2e2e2e" font-size="9" font-family="monospace">  LLMOps</text>
+              <text x="14" y="160" fill="#2e2e2e" font-size="9" font-family="monospace">  Workflow</text>
+              <text x="14" y="180" fill="#2e2e2e" font-size="9" font-family="monospace">  Analytics</text>
+              <rect x="8" y="200" width="104" height="1" fill="#1a1a1a"/>
+              <text x="12" y="220" fill="#2e2e2e" font-size="8" font-family="monospace">METRICS</text>
+              <text x="12" y="238" fill="#3a3a3a" font-size="8" font-family="monospace">Queries: 1,284</text>
+              <text x="12" y="252" fill="#3a3a3a" font-size="8" font-family="monospace">Accuracy: 94.2%</text>
+              <text x="12" y="266" fill="#3a3a3a" font-size="8" font-family="monospace">Latency: 0.31s</text>
+              <!-- Main area -->
+              <rect x="120" y="56" width="360" height="244" fill="#0c0c0c"/>
+              <!-- Query block -->
+              <rect x="132" y="68" width="336" height="54" rx="4" fill="#111"/>
+              <text x="142" y="84" fill="#444" font-size="8" font-family="monospace">INPUT</text>
+              <text x="142" y="98" fill="#999" font-size="9" font-family="monospace">{"task": "analyze_kpi", "dept": "sales",</text>
+              <text x="142" y="110" fill="#999" font-size="9" font-family="monospace"> "period": "Q3-2025", "format": "json"}</text>
+              <!-- Processing indicator -->
+              <text x="142" y="138" fill="#3a3a3a" font-size="8" font-family="monospace">processing...</text>
+              <rect x="204" y="130" width="60" height="5" rx="2" fill="#1a1a1a"/>
+              <rect x="204" y="130" width="42" height="5" rx="2" fill="#444"/>
+              <!-- Response block -->
+              <rect x="132" y="150" width="336" height="100" rx="4" fill="#0f0f0f" stroke="#1c1c1c" stroke-width="1"/>
+              <text x="142" y="166" fill="#444" font-size="8" font-family="monospace">RESPONSE</text>
+              <text x="142" y="180" fill="#ddd" font-size="9" font-family="monospace">{"status": "ok", "confidence": 0.96,</text>
+              <text x="142" y="193" fill="#ddd" font-size="9" font-family="monospace"> "kpi_summary": "Q3 revenue up 18%",</text>
+              <text x="142" y="206" fill="#ddd" font-size="9" font-family="monospace"> "anomalies": ["spike_aug_12"],</text>
+              <text x="142" y="219" fill="#ddd" font-size="9" font-family="monospace"> "action": "review_pipeline_stage_3"}</text>
+              <!-- Footer bar -->
+              <rect x="120" y="268" width="360" height="32" fill="#0a0a0a"/>
+              <circle cx="136" cy="284" r="3" fill="#555"/>
+              <text x="146" y="288" fill="#555" font-size="8" font-family="monospace">0.31s</text>
+              <text x="200" y="288" fill="#2e2e2e" font-size="8" font-family="monospace">Enterprise · Private Deploy · LLMOps ON</text>
+            </svg>
+            <p class="mockup-caption">Concept mockup — illustrative of JULIE's JSON-native enterprise interface</p>
+          </div>
+
+          <!-- SVG Mockup: Architecture Diagram -->
+          <div class="julie-mockup glass-card">
+            <div class="mockup-label">JULIE Architecture — System Design</div>
+            <svg viewBox="0 0 480 300" class="mockup-svg" xmlns="http://www.w3.org/2000/svg">
+              <rect width="480" height="300" fill="#080808" rx="8"/>
+              <!-- Title -->
+              <text x="240" y="24" fill="#444" font-size="10" font-family="monospace" text-anchor="middle">JULIE · System Architecture</text>
+              <!-- Input layer label -->
+              <text x="240" y="50" fill="#333" font-size="8" font-family="monospace" text-anchor="middle">INPUT LAYER</text>
+              <!-- Input boxes -->
+              <rect x="20" y="56" width="120" height="28" rx="4" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
+              <text x="80" y="74" fill="#666" font-size="8" font-family="monospace" text-anchor="middle">Natural Language</text>
+              <rect x="180" y="56" width="120" height="28" rx="4" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
+              <text x="240" y="74" fill="#666" font-size="8" font-family="monospace" text-anchor="middle">JSON API</text>
+              <rect x="340" y="56" width="120" height="28" rx="4" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
+              <text x="400" y="74" fill="#666" font-size="8" font-family="monospace" text-anchor="middle">Legacy Systems</text>
+              <!-- Connector lines -->
+              <line x1="80" y1="84" x2="80" y2="100" stroke="#222" stroke-width="1"/>
+              <line x1="240" y1="84" x2="240" y2="100" stroke="#333" stroke-width="1"/>
+              <line x1="400" y1="84" x2="400" y2="100" stroke="#222" stroke-width="1"/>
+              <line x1="80" y1="100" x2="400" y2="100" stroke="#222" stroke-width="1"/>
+              <line x1="240" y1="100" x2="240" y2="112" stroke="#222" stroke-width="1"/>
+              <!-- JULIE Core — white on dark, no blue -->
+              <rect x="60" y="112" width="360" height="64" rx="6" fill="#141414" stroke="#2e2e2e" stroke-width="1"/>
+              <text x="240" y="132" fill="#e8e8e8" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">JULIE CORE ENGINE</text>
+              <text x="240" y="148" fill="#555" font-size="8" font-family="monospace" text-anchor="middle">Multi-Foundational AI · JSON-Native Protocol</text>
+              <!-- Sub-modules -->
+              <rect x="72" y="158" width="76" height="12" rx="2" fill="rgba(255,255,255,0.03)"/>
+              <text x="110" y="167" fill="#888" font-size="7" font-family="monospace" text-anchor="middle">KnowSys</text>
+              <rect x="158" y="158" width="76" height="12" rx="2" fill="rgba(255,255,255,0.03)"/>
+              <text x="196" y="167" fill="#888" font-size="7" font-family="monospace" text-anchor="middle">LLMOps</text>
+              <rect x="244" y="158" width="76" height="12" rx="2" fill="rgba(255,255,255,0.03)"/>
+              <text x="282" y="167" fill="#888" font-size="7" font-family="monospace" text-anchor="middle">InfraAI</text>
+              <rect x="330" y="158" width="78" height="12" rx="2" fill="rgba(255,255,255,0.03)"/>
+              <text x="369" y="167" fill="#888" font-size="7" font-family="monospace" text-anchor="middle">Workflow</text>
+              <!-- Connector lines down -->
+              <line x1="240" y1="176" x2="240" y2="196" stroke="#222" stroke-width="1"/>
+              <line x1="80" y1="196" x2="400" y2="196" stroke="#222" stroke-width="1"/>
+              <line x1="80" y1="196" x2="80" y2="208" stroke="#222" stroke-width="1"/>
+              <line x1="240" y1="196" x2="240" y2="208" stroke="#222" stroke-width="1"/>
+              <line x1="400" y1="196" x2="400" y2="208" stroke="#222" stroke-width="1"/>
+              <!-- Output layer -->
+              <text x="240" y="206" fill="#333" font-size="8" font-family="monospace" text-anchor="middle">OUTPUT LAYER</text>
+              <rect x="20" y="212" width="120" height="28" rx="4" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
+              <text x="80" y="230" fill="#666" font-size="8" font-family="monospace" text-anchor="middle">Enterprise CRM</text>
+              <rect x="180" y="212" width="120" height="28" rx="4" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
+              <text x="240" y="230" fill="#666" font-size="8" font-family="monospace" text-anchor="middle">Analytics &amp; BI</text>
+              <rect x="340" y="212" width="120" height="28" rx="4" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
+              <text x="400" y="230" fill="#666" font-size="8" font-family="monospace" text-anchor="middle">Custom Outputs</text>
+              <!-- Privacy badge — monochrome -->
+              <rect x="120" y="254" width="240" height="28" rx="6" fill="#111" stroke="#2a2a2a" stroke-width="1"/>
+              <text x="240" y="272" fill="#888" font-size="8" font-family="monospace" text-anchor="middle">Private Deployment · No Data Leaves Your Infra</text>
+            </svg>
+            <p class="mockup-caption">Architectural concept — proprietary design, subject to change during development</p>
+          </div>
+        </div>
+
+        <!-- JULIE vs Generic AI Comparison Table -->
+        <div class="julie-compare glass-card">
+          <div class="jc-header">
+            <div>
+              <h3>Why JULIE Instead of Generic AI?</h3>
+              <p>The enterprise AI market is competitive. Here is where JULIE's architecture differs from generic AI solutions — and why that matters for enterprise customers.</p>
+            </div>
+          </div>
+          <div class="jc-table-wrap">
+            <table class="jc-table">
+              <thead>
+                <tr>
+                  <th>Capability</th>
+                  <th class="jc-julie">J.U.L.I.E</th>
+                  <th>OpenAI / Generic AI</th>
+                  <th>Why It Matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>JSON-Native Protocol</td>
+                  <td class="jc-yes">Native</td>
+                  <td class="jc-no">Requires parsing</td>
+                  <td>Enterprise systems talk JSON. JULIE speaks it natively, no middleware needed.</td>
+                </tr>
+                <tr>
+                  <td>Private / On-Prem Deployment</td>
+                  <td class="jc-yes">Full private</td>
+                  <td class="jc-partial">Cloud only</td>
+                  <td>Indian enterprises with sensitive data cannot use cloud-only AI. JULIE runs inside their infra.</td>
+                </tr>
+                <tr>
+                  <td>LLMOps Integration</td>
+                  <td class="jc-yes">Built-in</td>
+                  <td class="jc-partial">Third-party required</td>
+                  <td>Model lifecycle management, monitoring, and fine-tuning built in, not bolted on.</td>
+                </tr>
+                <tr>
+                  <td>Infrastructure Intelligence</td>
+                  <td class="jc-yes">InfraAI module</td>
+                  <td class="jc-no">Not available</td>
+                  <td>JULIE can reason about your IT infrastructure and suggest optimizations.</td>
+                </tr>
+                <tr>
+                  <td>India-First Training &amp; Compliance</td>
+                  <td class="jc-yes">Designed for India</td>
+                  <td class="jc-partial">US-centric models</td>
+                  <td>Regulatory compliance, language nuance, and enterprise context aligned to Indian business.</td>
+                </tr>
+                <tr>
+                  <td>Agentic Workflow Execution</td>
+                  <td class="jc-yes">Native agentic</td>
+                  <td class="jc-partial">Via add-ons</td>
+                  <td>JULIE can execute multi-step enterprise workflows autonomously, not just answer questions.</td>
+                </tr>
+                <tr>
+                  <td>Pricing for Indian SME</td>
+                  <td class="jc-yes">INR-native pricing</td>
+                  <td class="jc-no">USD pricing, high cost</td>
+                  <td>OpenAI API costs are prohibitive for Indian mid-market. JULIE is priced for the Indian enterprise.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="jc-note">This comparison reflects architectural intent and design goals. Not all features are production-ready. Competitor feature sets change frequently. Verify independently before making decisions.</p>
+        </div>
+      </div>
+
+      <!-- YAKO -->
+      <div class="product-deep glass-card reveal" data-delay="100" style="margin-top:24px;">
+        <div class="product-deep-header">
+          <div class="pd-label-row">
+            <div class="product-deep-label upcoming-label">Upcoming · FoodTech AI</div>
+          </div>
+          <div class="product-deep-scores">
+            <div class="mini-score"><div class="mini-score-bar"><div class="mini-score-fill msf-1" style="width:74%"></div></div><span>Market Opportunity <strong>74</strong>/100</span></div>
+            <div class="mini-score"><div class="mini-score-bar"><div class="mini-score-fill msf-2" style="width:68%"></div></div><span>Concept Validity <strong>68</strong>/100</span></div>
+            <div class="mini-score"><div class="mini-score-bar"><div class="mini-score-fill msf-3" style="width:28%"></div></div><span>Execution Readiness <strong>28</strong>/100 (early)</span></div>
+            <div class="mini-score"><div class="mini-score-bar"><div class="mini-score-fill msf-1" style="width:65%"></div></div><span>Revenue Potential <strong>65</strong>/100</span></div>
+          </div>
+        </div>
+        <div class="product-deep-body">
+          <div class="product-deep-left">
+            <h2 class="product-deep-title" style="opacity:0.85;">Y.A.K.O</h2>
+            <p class="product-deep-full">Yet Another Kitchen Operative</p>
+            <p class="product-deep-desc">AI-driven kitchen and food operations intelligence platform. YAKO targets India's 7.5M+ restaurants, cloud kitchens, and food service businesses with demand forecasting, inventory intelligence, and workforce planning. This is a concept in active validation — not a shipped product.</p>
+            <div class="product-features">
+              <div class="pf-item"><span class="pf-dot"></span>Kitchen Operations &amp; Demand Forecasting</div>
+              <div class="pf-item"><span class="pf-dot"></span>Inventory Intelligence — waste reduction</div>
+              <div class="pf-item"><span class="pf-dot"></span>Workforce Planning &amp; Scheduling</div>
+              <div class="pf-item"><span class="pf-dot"></span>Delivery &amp; Route Optimization</div>
+            </div>
+          </div>
+          <div class="product-deep-right">
+            <div class="product-analysis-card">
+              <h4>Key Risks</h4>
+              <p class="analysis-text">Restaurant operators in India are historically resistant to technology adoption. Physical execution adds hardware complexity. Swiggy, Zomato, and POS platforms are expanding into intelligence. YAKO needs strong distribution partnerships and proven unit economics before it can scale.</p>
+            </div>
+            <div class="product-analysis-card" style="margin-top:14px;">
+              <h4>India FoodTech Context</h4>
+              <div class="rev-row"><span>Restaurants in India</span><span style="font-size:0.82rem; color:var(--text);">7.5M+</span></div>
+              <div class="rev-row"><span>Cloud Kitchen Growth</span><span style="font-size:0.82rem; color:var(--text);">28% CAGR</span></div>
+              <div class="rev-row"><span>Current AI Adoption in F&amp;B</span><span style="font-size:0.82rem; color:var(--text);">&lt;5%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEAM ==================== -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">The People</span>
+        <h2 class="section-title reveal" data-delay="100">Who Is Building This</h2>
+        <p class="section-subtitle reveal" data-delay="200">A small, early-stage team. Credentials are real. The team is lean by choice — we believe in building before hiring.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- CEO -->
+        <div class="team-card glass-card reveal" data-delay="0">
+          <div class="team-badge team-badge-primary">Founder</div>
+          <div class="team-avatar team-avatar-primary">HM</div>
+          <h3 class="team-name">Hariharan Murugan</h3>
+          <div class="team-role">Founder, CEO &amp; Tech Lead</div>
+          <p class="team-bio">Building Cosmohentorq from Tamil Nadu, India. Solo technical founder handling product architecture, AI R&amp;D, and company operations. Startup India DIPP166809 · StartupTN STM83197.</p>
+          <div class="team-links">
+            <a href="https://cosmohentorq.com" target="_blank" class="team-link">cosmohentorq.com ↗</a>
+          </div>
+        </div>
+
+        <!-- VP -->
+        <div class="team-card glass-card reveal" data-delay="80">
+          <div class="team-badge">Leadership</div>
+          <div class="team-avatar">UG</div>
+          <h3 class="team-name">Udhayakumar Gopinath</h3>
+          <div class="team-role">Vice President</div>
+          <p class="team-bio">Part of the core leadership team, supporting strategic direction, operations, and organisational development as the company grows from pre-commercial to early-revenue stage.</p>
+        </div>
+
+        <!-- CTO / First Investor -->
+        <div class="team-card glass-card reveal" data-delay="160">
+          <div class="team-badge team-badge-accent">First Investor</div>
+          <div class="team-avatar">AV</div>
+          <h3 class="team-name">Adityaa Venkataraman</h3>
+          <div class="team-role">CTO &amp; First External Believer</div>
+          <p class="team-bio">Holds the dual distinction of being Cosmohentorq's first external investor and its Chief Technology Officer. His early commitment validated the thesis before any external funding.</p>
+        </div>
+
+        <!-- Advisor -->
+        <div class="team-card glass-card reveal" data-delay="240">
+          <div class="team-badge">Advisor</div>
+          <div class="team-avatar">TR</div>
+          <h3 class="team-name">T R Sundar Raghavan</h3>
+          <div class="team-role">Strategic Advisor</div>
+          <p class="team-bio">Brings deep industry experience and strategic guidance. Advisory relationship supports governance and market positioning as Cosmohentorq scales.</p>
+        </div>
+      </div>
+
+      <div class="team-note glass-card reveal" data-delay="100">
+        <strong>Honest note on team size:</strong> This is a lean, early-stage team. Not all members are full-time. Not all roles are fully defined. We are building the plane while flying it — and we are being transparent about that. Investor capital (if raised) will in part be used to expand the team.
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ROADMAP ==================== -->
+  <section class="roadmap-section" id="roadmap">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">Timeline</span>
+        <h2 class="section-title reveal" data-delay="100">The Road Ahead</h2>
+        <p class="section-subtitle reveal" data-delay="200">Milestones are targets, not commitments. Early-stage execution requires constant adaptation.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal" data-delay="0">
+          <div class="tl-dot done-dot"></div>
+          <div class="tl-card glass-card">
+            <span class="tl-date">May 2024</span>
+            <h4>Foundation</h4>
+            <p>Incorporated. Startup India recognized. StartupTN recognized. Core team formed. JULIE architecture initiated. Website launched.</p>
+            <span class="tl-badge badge-done">Completed</span>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="80">
+          <div class="tl-dot done-dot"></div>
+          <div class="tl-card glass-card">
+            <span class="tl-date">2024–2025</span>
+            <h4>Product Development Phase</h4>
+            <p>JULIE engine development. Intern program launched. STOPWATCH short film initiated. Initial product prototypes built and tested internally.</p>
+            <span class="tl-badge badge-done">In Progress</span>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="160">
+          <div class="tl-dot current-dot"></div>
+          <div class="tl-card glass-card">
+            <span class="tl-date">2025–2026 · Now</span>
+            <h4>Pre-Commercial Stage</h4>
+            <p>JULIE beta testing with select users. Investor and supporter outreach. YAKO concept validation. Revenue model finalization. Team expansion planning.</p>
+            <span class="tl-badge badge-current">Current Stage</span>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="240">
+          <div class="tl-dot future-dot"></div>
+          <div class="tl-card glass-card">
+            <span class="tl-date">12-Month Target · 2026–2027</span>
+            <h4>First Commercial Revenue</h4>
+            <p>JULIE commercial launch. First 5–10 paying enterprise customers. Initial ARR of ₹20–80L (base case). Team scaled to 10–15 members.</p>
+            <span class="tl-badge badge-future">Target</span>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="320">
+          <div class="tl-dot future-dot"></div>
+          <div class="tl-card glass-card">
+            <span class="tl-date">3-Year Target · 2027–2028</span>
+            <h4>Product-Market Fit</h4>
+            <p>JULIE serving 30–60 enterprise clients. YAKO in pilot deployments. ARR target ₹3–8Cr (base case). Exploring first institutional funding.</p>
+            <span class="tl-badge badge-future">Target</span>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="400">
+          <div class="tl-dot future-dot"></div>
+          <div class="tl-card glass-card">
+            <span class="tl-date">5-Year Vision · 2030</span>
+            <h4>Regional Scale</h4>
+            <p>Cosmohentorq as a recognized Indian enterprise AI brand. JULIE at ₹10–30Cr ARR. YAKO operational at scale. Team of 50+. Southeast Asia expansion explored.</p>
+            <span class="tl-badge badge-future">Vision</span>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-delay="480">
+          <div class="tl-dot future-dot" style="border-color:rgba(255,255,255,0.2);"></div>
+          <div class="tl-card glass-card">
+            <span class="tl-date">10-Year Ambition · 2034–2035</span>
+            <h4>Globally Recognized AI Company</h4>
+            <p>Cosmohentorq proving that world-class AI products can emerge from India. Multiple product lines. ARR ₹50–200Cr+ (base case). The rest depends on execution.</p>
+            <span class="tl-badge" style="background:rgba(255,255,255,0.04); color:var(--text-muted); border:1px solid var(--border);">Ambition</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Granular milestone feed -->
+      <div class="milestone-feed reveal" data-delay="100">
+        <div class="mf-header">
+          <span class="mf-title">Activity Log</span>
+          <span class="mf-live"><span class="mf-pulse"></span>Live</span>
+        </div>
+        <div class="mf-entries">
+          <div class="mf-entry">
+            <span class="mf-date">Jun 2026</span>
+            <span class="mf-text">Investor platform launched at invest.cosmohentorq.com</span>
+            <span class="mf-cat mfc-ops">Platform</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">Apr 2026</span>
+            <span class="mf-text">JULIE beta testing initiated with select users</span>
+            <span class="mf-cat mfc-product">Product</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">Mar 2026</span>
+            <span class="mf-text">JULIE enterprise interface v2 architecture completed</span>
+            <span class="mf-cat mfc-product">Product</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">Jan 2026</span>
+            <span class="mf-text">STOPWATCH short film production commenced</span>
+            <span class="mf-cat mfc-ops">Creative</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">Dec 2025</span>
+            <span class="mf-text">Intern cohort 2 onboarded — expanded to 4+ trained interns</span>
+            <span class="mf-cat mfc-team">Team</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">Sep 2025</span>
+            <span class="mf-text">YAKO concept validation research initiated</span>
+            <span class="mf-cat mfc-product">Product</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">Jul 2025</span>
+            <span class="mf-text">JULIE LLMOps module design finalized</span>
+            <span class="mf-cat mfc-product">Product</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">May 2025</span>
+            <span class="mf-text">Intern program cohort 1 completed training</span>
+            <span class="mf-cat mfc-team">Team</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">Nov 2024</span>
+            <span class="mf-text">JULIE KnowSys module architecture initiated</span>
+            <span class="mf-cat mfc-product">Product</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">May 2024</span>
+            <span class="mf-text">Startup India recognition issued — DIPP166809</span>
+            <span class="mf-cat mfc-govt">Govt</span>
+          </div>
+          <div class="mf-entry">
+            <span class="mf-date">May 2024</span>
+            <span class="mf-text">Cosmohentorq Innovations Pvt. Ltd. incorporated</span>
+            <span class="mf-cat mfc-ops">Founding</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== INVESTOR PSYCHOLOGY ==================== -->
+  <section class="psychology-section" id="reality">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">Before You Decide</span>
+        <h2 class="section-title reveal" data-delay="100">Read This First</h2>
+        <p class="section-subtitle reveal" data-delay="200">We believe the people who walk with us should do so with their eyes fully open. This section is not optional reading.</p>
+      </div>
+      <div class="psych-grid">
+        <div class="psych-card glass-card reveal" data-delay="0">
+          <div class="psych-num">01</div>
+          <h3>Most Startups Fail</h3>
+          <p>Approximately 90% of startups globally do not survive 10 years. Deep-tech startups face longer timelines, higher capital requirements, and harder market adoption curves. Cosmohentorq is early-stage and pre-revenue. We are in the risky 90%, not yet in the successful 10%.</p>
+        </div>
+        <div class="psych-card glass-card reveal" data-delay="80">
+          <div class="psych-num">02</div>
+          <h3>No Revenue Yet</h3>
+          <p>Cosmohentorq has not generated commercial revenue as of the date of this platform. All revenue projections shown here are forward-looking estimates based on assumptions. They are not actuals. There is no guarantee that any revenue will be generated.</p>
+        </div>
+        <div class="psych-card glass-card reveal" data-delay="160">
+          <div class="psych-num">03</div>
+          <h3>Legal Complexity</h3>
+          <p>Any participation above ₹1L is subject to SEBI regulations, Companies Act 2013, and applicable investment laws. Nothing on this platform constitutes a binding offer. All participation structures require qualified legal review and formal agreements before any commitment.</p>
+        </div>
+        <div class="psych-card glass-card reveal" data-delay="240">
+          <div class="psych-num">04</div>
+          <h3>Why Some Succeed</h3>
+          <p>The rare companies that navigate these challenges create lasting value — economically and societally. Early participants in such companies can benefit asymmetrically. That asymmetry exists. So does the equally real possibility of losing everything. Both are true simultaneously.</p>
+        </div>
+        <div class="psych-card glass-card reveal" data-delay="320">
+          <div class="psych-num">05</div>
+          <h3>What This Is</h3>
+          <p>Community support is a voluntary contribution to an Indian DeepTech mission. Strategic participation is an exploratory conversation about future structures. Neither is a simple investment product with a defined return. You are supporting something being built — not buying something already proven.</p>
+        </div>
+        <div class="psych-card glass-card reveal" data-delay="400">
+          <div class="psych-num">06</div>
+          <h3>Why We Tell You This</h3>
+          <p>Because long-term trust is worth more than short-term participation. We want people around us who understand the risk and believe in the mission — not people who were misled. Cosmohentorq's reputation depends on honesty more than it depends on capital.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THINGS WE COULD BE WRONG ABOUT ==================== -->
+  <section class="wrongabout-section" id="risks">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">Honest Risk Register</span>
+        <h2 class="section-title reveal" data-delay="100">Things We Could Be Wrong About</h2>
+        <p class="section-subtitle reveal" data-delay="200">Most investor decks list risks in fine print. We put ours front and centre. If any of these happen, the company may not survive. Read them seriously.</p>
+      </div>
+      <div class="wrongabout-grid">
+        <div class="wa-card glass-card reveal" data-delay="0">
+          <span class="wa-risk-tag wa-risk-high">High Impact Risk</span>
+          <h4>OpenAI drops enterprise prices by 80%</h4>
+          <p>If OpenAI commoditises enterprise AI with aggressive pricing, the cost advantage of building locally shrinks significantly. Indian enterprises may not switch to a local provider even with better integration if the price delta disappears.</p>
+          <p class="wa-resolution">Our answer: JULIE's moat is private deployment and India-compliance, not price alone. But we could be wrong about whether enterprises care enough to pay for those.</p>
+        </div>
+        <div class="wa-card glass-card reveal" data-delay="60">
+          <span class="wa-risk-tag wa-risk-high">High Impact Risk</span>
+          <h4>Indian enterprise procurement cycles don't shorten</h4>
+          <p>Enterprise sales in India are slow. A 12–18 month sales cycle requires capital to survive the gap. If procurement stays slow, we may run out of runway before generating meaningful revenue — even with a good product.</p>
+          <p class="wa-resolution">Our answer: We're targeting mid-market (faster decisions) before Fortune 500. But sales cycles are hard to predict and we have limited experience at commercial scale.</p>
+        </div>
+        <div class="wa-card glass-card reveal" data-delay="120">
+          <span class="wa-risk-tag wa-risk-high">High Impact Risk</span>
+          <h4>We can't hire a senior sales leader within budget</h4>
+          <p>Technical founders often struggle to close enterprise deals at scale. A great product without sales execution doesn't generate revenue. We have not yet proven commercial distribution — this is the largest execution gap right now.</p>
+          <p class="wa-resolution">Our answer: The founder is learning sales. But this is a real risk and we are honest about it in the Founder section.</p>
+        </div>
+        <div class="wa-card glass-card reveal" data-delay="180">
+          <span class="wa-risk-tag wa-risk-med">Medium Impact Risk</span>
+          <h4>JULIE's architecture advantage is temporary</h4>
+          <p>The AI industry moves fast. What is a genuine architectural differentiation today may become a commodity standard in 18 months. If OpenAI or Anthropic natively support on-premise deployment with JSON protocols, our enterprise moat shrinks.</p>
+          <p class="wa-resolution">Our answer: Moats evolve from architecture → data → distribution. The goal is to accumulate distribution while architecture advantage exists.</p>
+        </div>
+        <div class="wa-card glass-card reveal" data-delay="240">
+          <span class="wa-risk-tag wa-risk-med">Medium Impact Risk</span>
+          <h4>YAKO faces too much friction from non-tech restaurateurs</h4>
+          <p>India's 7.5M restaurants are largely run by owners with low technology adoption. Getting a restaurant owner in Coimbatore to pay ₹8,000/month for AI-driven kitchen intelligence is a distribution and behaviour change problem we have not solved yet.</p>
+          <p class="wa-resolution">Our answer: YAKO will only launch after JULIE has proven revenue. It's a future bet, not a current commitment.</p>
+        </div>
+        <div class="wa-card glass-card reveal" data-delay="300">
+          <span class="wa-risk-tag wa-risk-med">Medium Impact Risk</span>
+          <h4>The team stays small for too long</h4>
+          <p>Cosmohentorq is founder-led with a lean team. Single-founder concentration means key-person risk. If the founder is unable to perform for any reason, company operations could be severely disrupted. Team depth beyond the founder is the most honest limitation right now.</p>
+          <p class="wa-resolution">Our answer: Investor capital will in part address this. But the risk is real until the team grows.</p>
+        </div>
+      </div>
+      <div class="wa-honest-note reveal" data-delay="100">
+        We tell you what could go wrong because we want you to decide with full information. The companies worth backing are the ones that see their risks clearly and have a plan for each one — not the ones that bury them in a disclaimer. If these risks concern you, they should. Think carefully before participating.
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PARTICIPATE ==================== -->
+  <section class="participate-section" id="participate">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">How to Participate</span>
+        <h2 class="section-title reveal" data-delay="100">Two Paths</h2>
+        <p class="section-subtitle reveal" data-delay="200">Two clearly separated categories with different purposes, benefits, and legal implications.</p>
+      </div>
+      <div class="participate-grid">
+        <div class="participate-card glass-card reveal" data-delay="0">
+          <div class="part-group-label">Group 1</div>
+          <h3>Community Supporters</h3>
+          <div class="part-amount">₹100 — ₹99,999</div>
+          <div class="part-clarity-box">
+            <strong>This is NOT an investment.</strong> Community support is a voluntary contribution to support Indian DeepTech innovation. No ownership, equity, voting rights, or financial return expectation of any kind.
+          </div>
+          <p class="part-desc">Support the mission. Help fund early-stage research, team growth, and product development.</p>
+          <div class="part-benefits">
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Digital Supporter Badge &amp; Certificate
+            </div>
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Exclusive Founder Newsletter
+            </div>
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Product Development Updates
+            </div>
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Early Beta Access Opportunities
+            </div>
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Supporter Community Recognition
+            </div>
+          </div>
+          <a href="https://wa.me/918754883872?text=Hi%2C%20I%27d%20like%20to%20become%20a%20Community%20Supporter%20of%20Cosmohentorq." target="_blank" rel="noopener" class="btn btn-secondary part-cta">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Reach Out on WhatsApp
+          </a>
+        </div>
+        <div class="participate-card glass-card part-premium reveal" data-delay="150">
+          <div class="part-group-label pgl-gold">Group 2</div>
+          <h3>Strategic Participants</h3>
+          <div class="part-amount">₹1,00,000 and Above</div>
+          <div class="part-clarity-box part-clarity-gold">
+            <strong>For exploratory discussion only.</strong> Not a confirmed investment offer. Any structure is subject to legal agreements, regulatory compliance, due diligence, and mutual consent. No guarantees of any kind.
+          </div>
+          <p class="part-desc">For individuals, angels, and institutions who want to explore future commercial participation with Cosmohentorq.</p>
+          <div class="part-benefits">
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Detailed product &amp; business model briefing
+            </div>
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Financial model walkthrough (non-binding)
+            </div>
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Direct founder engagement
+            </div>
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Structure options (subject to legal review)
+            </div>
+            <div class="part-benefit">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Compliance &amp; legal guidance provided
+            </div>
+          </div>
+          <a href="#explorer" class="btn btn-primary part-cta">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Use Simulation Explorer
+          </a>
+        </div>
+      </div>
+
+      <!-- What happens after you reach out -->
+      <div class="what-happens glass-card reveal" data-delay="100">
+        <h3>What Happens After You Reach Out</h3>
+        <p>No forms, no automated pipelines. Every inquiry is handled personally by the founder.</p>
+        <div class="steps-flow">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-title">You Message</div>
+            <div class="step-desc">WhatsApp or email — include your name and what you'd like to discuss</div>
+            <div class="step-time">Day 0</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-title">Founder Reviews</div>
+            <div class="step-desc">Hariharan personally reads every inquiry — no assistants, no automation</div>
+            <div class="step-time">Within 48 hrs</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-title">Intro Call</div>
+            <div class="step-desc">20-minute direct conversation — mutual fit assessment, no pressure</div>
+            <div class="step-time">Week 1</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-title">Documents Shared</div>
+            <div class="step-desc">Detailed company profile, product deck, and financial model (non-binding)</div>
+            <div class="step-time">Week 2</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">5</div>
+            <div class="step-title">Structure Discussion</div>
+            <div class="step-desc">Legal, compliance, and structure options explored with qualified advisors</div>
+            <div class="step-time">Week 3+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Response time pledge -->
+      <div class="response-pledge reveal" data-delay="150">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span><strong>48-hour response commitment:</strong> Hariharan personally responds to all serious inquiries within 48 hours. If you don't hear back, follow up — messages occasionally get missed.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EXPLORER ==================== -->
+  <section class="explorer-section" id="explorer">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="section-label reveal">Scenario Modelling</span>
+        <h2 class="section-title reveal" data-delay="100">Investment Explorer</h2>
+        <p class="section-subtitle reveal" data-delay="200">Enter your details to generate an educational scenario simulation. All projections are illustrative estimates only — not financial advice.</p>
+      </div>
+
+      <div class="explorer-wrap">
+        <!-- Form -->
+        <div class="explorer-form glass-card reveal">
+          <div class="form-section-title">Your Details</div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="inv_name" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label>Country</label>
+              <select id="inv_country">
+                <option value="">Select Country</option>
+                <option>India</option><option>United States</option><option>United Kingdom</option>
+                <option>UAE</option><option>Singapore</option><option>Australia</option>
+                <option>Canada</option><option>Japan</option><option>Germany</option><option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="inv_email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label>Phone / WhatsApp</label>
+              <input type="tel" id="inv_phone" placeholder="+91 00000 00000" />
+            </div>
+          </div>
+
+          <div class="form-section-title" style="margin-top:28px;">Simulation Parameters</div>
+          <div class="form-group">
+            <label>Currency</label>
+            <div class="currency-grid">
+              <button type="button" class="curr-btn active" data-curr="INR">₹ INR</button>
+              <button type="button" class="curr-btn" data-curr="USD">$ USD</button>
+              <button type="button" class="curr-btn" data-curr="EUR">€ EUR</button>
+              <button type="button" class="curr-btn" data-curr="GBP">£ GBP</button>
+              <button type="button" class="curr-btn" data-curr="AED">د AED</button>
+              <button type="button" class="curr-btn" data-curr="AUD">A$ AUD</button>
+              <button type="button" class="curr-btn" data-curr="CAD">C$ CAD</button>
+              <button type="button" class="curr-btn" data-curr="SGD">S$ SGD</button>
+              <button type="button" class="curr-btn" data-curr="JPY">¥ JPY</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Focus Area <span style="color:var(--text-muted); font-weight:400;">(Multiple allowed)</span></label>
+            <div class="product-select-grid">
+              <button type="button" class="prod-btn" data-prod="JULIE">J.U.L.I.E — Enterprise AI</button>
+              <button type="button" class="prod-btn" data-prod="YAKO">Y.A.K.O — FoodTech AI</button>
+              <button type="button" class="prod-btn" data-prod="AI Infrastructure">AI Infrastructure</button>
+              <button type="button" class="prod-btn" data-prod="R&D">Research &amp; Development</button>
+              <button type="button" class="prod-btn" data-prod="Global Expansion">Global Expansion</button>
+              <button type="button" class="prod-btn" data-prod="Talent">Talent Growth</button>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Amount <span id="currLabel" style="color:var(--accent);">INR</span></label>
+              <input type="number" id="inv_amount" placeholder="e.g. 500000" min="100" />
+            </div>
+            <div class="form-group">
+              <label>Time Horizon</label>
+              <select id="inv_horizon">
+                <option value="1">1 Year</option>
+                <option value="3" selected>3 Years</option>
+                <option value="5">5 Years</option>
+                <option value="10">10 Years</option>
+                <option value="15">15 Years</option>
+              </select>
+            </div>
+          </div>
+          <div id="formSavedNotice" class="form-saved-notice" style="display:none;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Last simulation parameters restored
+          </div>
+
+          <!-- Advanced Mode Toggle -->
+          <button type="button" class="adv-toggle-btn" id="advModeToggle">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Advanced: Sensitivity Controls
+          </button>
+
+          <!-- Sensitivity Controls (hidden by default) -->
+          <div class="adv-mode-section" id="advModeSection" style="display:none;">
+            <div class="form-section-title" style="margin-top:0; margin-bottom:16px;">Adjust Growth Assumptions</div>
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <label for="sliderARPU">Avg. Revenue Per Customer / mo</label>
+                <span class="slider-val" id="sliderARPUVal">₹1.5L</span>
+              </div>
+              <input type="range" class="sim-slider" id="sliderARPU" min="50000" max="300000" step="10000" value="150000" />
+              <div class="slider-range"><span>₹50K (conservative)</span><span>₹3L (optimistic)</span></div>
+            </div>
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <label for="sliderCust">New Enterprise Customers / Year</label>
+                <span class="slider-val" id="sliderCustVal">8</span>
+              </div>
+              <input type="range" class="sim-slider" id="sliderCust" min="2" max="25" step="1" value="8" />
+              <div class="slider-range"><span>2 (slow)</span><span>25 (fast)</span></div>
+            </div>
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <label for="sliderChurn">Annual Customer Churn Rate</label>
+                <span class="slider-val" id="sliderChurnVal">15%</span>
+              </div>
+              <input type="range" class="sim-slider" id="sliderChurn" min="5" max="50" step="5" value="15" />
+              <div class="slider-range"><span>5% (sticky)</span><span>50% (high churn)</span></div>
+            </div>
+            <div class="gf-display">
+              Growth factor applied to positive scenarios: <span class="gf-val" id="gfDisplay">1.00×</span>
+            </div>
+            <p class="adv-note">These sliders scale the positive scenario return multipliers. Base assumptions: ₹1.5L ARPU · 8 new clients/yr · 15% churn. The fail scenario probability is unaffected — that reflects startup base rates, not model assumptions.</p>
+          </div>
+
+          <button class="btn btn-primary run-btn" id="runSimBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Run Simulation
+          </button>
+        </div>
+
+        <!-- Loading State -->
+        <div class="sim-loading" id="simLoading" style="display:none;">
+          <div class="sim-loading-inner glass-card">
+            <div class="sim-spinner"></div>
+            <div class="sim-loading-step" id="simLoadingStep">Initializing...</div>
+            <div class="sim-loading-bar-track"><div class="sim-loading-bar" id="simLoadingBar"></div></div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="sim-results" id="simResults" style="display:none;">
+
+          <!-- Header -->
+          <div class="sim-results-header glass-card">
+            <div class="srh-left">
+              <div class="sim-ref" id="simRef"></div>
+              <div class="sim-date" id="simDate"></div>
+            </div>
+            <div class="sim-disc">Educational simulation · Not financial advice · All figures are illustrative</div>
+          </div>
+
+          <!-- Your Capital Summary -->
+          <div class="cap-summary glass-card" id="capSummary"></div>
+
+          <!-- Breakeven indicator — rendered by JS -->
+          <div id="breakevenStrip"></div>
+
+          <!-- Dilution model toggle -->
+          <div class="dilution-box glass-card" id="dilutionBox">
+            <div class="dilution-toggle-row">
+              <input type="checkbox" id="dilutionToggle" />
+              <label for="dilutionToggle">Model future funding round dilution (Series A + B — 20% + 15% typical)</label>
+            </div>
+            <div class="dilution-result" id="dilutionResult" style="display:none;"></div>
+          </div>
+
+          <!-- Risk Distribution — rendered by JS from RETURN_SCENARIOS -->
+          <div class="risk-dist glass-card" id="riskDist"></div>
+
+          <!-- Investor Return Scenarios -->
+          <div class="scenarios-grid" id="scenariosGrid"></div>
+
+          <!-- Investment Value Chart -->
+          <div class="sim-chart-card glass-card">
+            <h4>Your Investment Value Over Time</h4>
+            <p class="chart-note" style="margin-bottom:20px;">Estimated value of your capital across scenarios. Shaded band = Monte Carlo range (200 simulations). Assumes a liquidity event occurs — not guaranteed.</p>
+            <div class="sim-chart-wrap"><svg id="simChart" viewBox="0 0 820 240" class="sim-svg" overflow="visible"></svg></div>
+            <div class="sim-chart-legend" id="simChartLegend"></div>
+            <p class="mc-note">Monte Carlo: 200 paths simulated per scenario with ±35% noise. The fan width represents outcome uncertainty, not a range of "likely" returns.</p>
+            <div class="yoy-controls">
+              <button class="yoy-toggle-btn" id="yoyToggleBtn">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                Show Year-by-Year Table
+              </button>
+              <button class="sim-share-btn" id="simShareBtn">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                Share Simulation
+              </button>
+            </div>
+            <div class="yoy-table-wrap" id="yoyTableWrap" style="display:none;"></div>
+          </div>
+
+          <!-- Comparison -->
+          <div class="alt-compare glass-card">
+            <h4>How This Compares to Other Options</h4>
+            <p class="cap-subtitle">For the same money, over the same time horizon. Not a recommendation.</p>
+            <div id="altCompareRows"></div>
+          </div>
+
+          <!-- Capital Deployment (secondary context) -->
+          <div class="cap-deploy glass-card">
+            <h4>Where Your Capital Would Go</h4>
+            <p class="cap-subtitle">How this amount would be allocated across Cosmohentorq's operations if participation proceeds</p>
+            <div id="capDeployBars"></div>
+          </div>
+
+          <!-- Report Actions — NO FORMS, WhatsApp + Email only -->
+          <div class="report-section glass-card">
+            <h4>Get Your Investor Report</h4>
+            <p class="report-desc">Generate a summary of this simulation and send it directly to the founder. No forms — just a direct conversation.</p>
+            <div class="report-btns">
+              <button class="report-btn" id="pdfBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Save as PDF
+              </button>
+              <button class="report-btn" id="waBtn">
+                <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.47.644 4.788 1.77 6.8L2 30l7.39-1.738A13.934 13.934 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.32 19.38c-.346-.173-2.048-1.01-2.366-1.126-.317-.115-.548-.173-.778.174-.23.346-.893 1.126-1.094 1.357-.202.23-.403.26-.75.087-.346-.174-1.46-.538-2.782-1.717-1.028-.918-1.722-2.05-1.924-2.397-.202-.347-.022-.534.151-.706.156-.155.346-.404.519-.605.173-.202.23-.347.346-.577.115-.23.058-.433-.03-.606-.086-.173-.778-1.876-1.066-2.57-.282-.674-.566-.582-.778-.592l-.663-.012c-.23 0-.606.087-.923.433-.317.347-1.21 1.183-1.21 2.886s1.239 3.346 1.412 3.578c.173.23 2.44 3.726 5.91 5.222.826.357 1.47.57 1.973.73.829.263 1.583.226 2.179.137.664-.1 2.048-.838 2.337-1.647.288-.808.288-1.502.202-1.647-.087-.144-.317-.23-.663-.404z"/></svg>
+                Send via WhatsApp
+              </button>
+              <button class="report-btn" id="emailBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Send via Email
+              </button>
+              <button class="report-btn" id="execBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                Executive Summary
+              </button>
+              <button class="report-btn report-btn-reset" id="resetSimBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.9"/></svg>
+                Reset Simulation
+              </button>
+            </div>
+            <p class="report-contact-note">All communications go to <strong>+91 8754883872</strong> · <strong>apex@cosmohentorq.com</strong> · <strong>labs@cosmohentorq.com</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-container">
+        <div>
+          <span class="section-label reveal">FAQ</span>
+          <h2 class="section-title reveal" data-delay="100">Common Questions</h2>
+          <p class="reveal" data-delay="200" style="color:var(--text-dim); font-size:0.9rem; line-height:1.7;">More questions? Reach out directly — we respond personally.</p>
+          <div style="margin-top:32px; display:flex; flex-direction:column; gap:12px;" class="reveal" data-delay="300">
+            <a href="https://wa.me/918754883872" target="_blank" rel="noopener" class="btn btn-primary" style="width:fit-content;">WhatsApp +91 8754883872</a>
+            <a href="mailto:apex@cosmohentorq.com" class="btn btn-secondary" style="width:fit-content;">apex@cosmohentorq.com</a>
+          </div>
+        </div>
+        <div class="faq-list reveal" data-delay="150">
+          <div class="faq-item">
+            <div class="faq-question">Is community support the same as investing?<span class="faq-toggle">+</span></div>
+            <div class="faq-answer"><div class="faq-answer-inner">No. Community support (₹100–₹99,999) is a voluntary contribution. It grants no equity, ownership, voting rights, or financial return expectation. It is support for a mission you believe in.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What are the simulation numbers based on?<span class="faq-toggle">+</span></div>
+            <div class="faq-answer"><div class="faq-answer-inner">Revenue projections use JULIE's assumed pricing (₹50K–3L/month per enterprise client), realistic enterprise sales cycle timelines, and comparable early-stage Indian SaaS companies as benchmarks. They are not actuals. They are plausible estimates with high uncertainty.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Is Cosmohentorq currently raising?<span class="faq-toggle">+</span></div>
+            <div class="faq-answer"><div class="faq-answer-inner">Cosmohentorq is having exploratory conversations with potential strategic participants. We are not conducting a formal fundraising round. Any discussion is non-binding and subject to legal process.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How do I speak to the founder directly?<span class="faq-toggle">+</span></div>
+            <div class="faq-answer"><div class="faq-answer-inner">WhatsApp +91 8754883872 or email apex@cosmohentorq.com. Hariharan personally responds to serious inquiries. Include your name, country, and what you'd like to discuss.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What is JULIE's current status?<span class="faq-toggle">+</span></div>
+            <div class="faq-answer"><div class="faq-answer-inner">JULIE is in active development. Core engine architecture is being built. Pre-booking is open at julie.cosmohentorq.com. Commercial launch is targeted for 2025–2026, subject to development milestones.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What recognition does Cosmohentorq have?<span class="faq-toggle">+</span></div>
+            <div class="faq-answer"><div class="faq-answer-inner">Startup India (DIPP166809, issued May 2024, valid until 2034) and StartupTN (STM83197). These are government recognitions, not valuations, guarantees, or endorsements of commercial performance.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER + DISCLAIMER ==================== -->
+  <footer class="footer" id="disclaimer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="display:inline-flex;">
+            <img src="logo-white.png" alt="Cosmohentorq" class="nav-logo-img" />
+            <div class="logo-text-wrap">
+              <span class="logo-text">COSMOHENTORQ</span>
+              <span class="logo-tagline">Investor Platform</span>
+            </div>
+          </div>
+          <p>Cosmohentorq Innovations Pvt. Ltd. Building AI and DeepTech products from Tamil Nadu, India.</p>
+          <div class="footer-badges">
+            <span class="footer-badge fb-india">Startup India · DIPP166809</span>
+            <span class="footer-badge fb-tn">Startup TN · STM83197</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#why">Why Cosmohentorq</a></li>
+            <li><a href="#founder">Founder</a></li>
+            <li><a href="#market">Market</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#participate">Participate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="https://cosmohentorq.com" target="_blank" rel="noopener">Main Website ↗</a></li>
+            <li><a href="https://julie.cosmohentorq.com" target="_blank" rel="noopener">J.U.L.I.E ↗</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://wa.me/918754883872">WhatsApp +91 8754883872</a></li>
+            <li><a href="mailto:apex@cosmohentorq.com">apex@cosmohentorq.com</a></li>
+            <li><a href="mailto:labs@cosmohentorq.com">labs@cosmohentorq.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="full-disclaimer">
+        <div class="disc-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          IMPORTANT DISCLAIMER
+        </div>
+        <p>This platform is intended for informational and educational purposes only. All forecasts, projections, simulations, and scenarios are illustrative estimates based on assumptions and publicly available data. They are not actual financial projections or advice.</p>
+        <p>Nothing on this platform constitutes a guarantee of future returns, ownership rights, equity participation, or financial performance. Community support is a voluntary contribution with no financial return expectation. Strategic participation discussions are exploratory and subject to applicable laws, regulations, formal agreements, and due diligence.</p>
+        <p>Users should seek independent professional financial, legal, and tax advice before making any financial decisions. Cosmohentorq Innovations Pvt. Ltd. is not a registered investment advisor. Participation structures are subject to SEBI regulations, Companies Act 2013, and other applicable laws. Early-stage startups carry significant risk of total capital loss.</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Cosmohentorq Innovations Pvt. Ltd. All Rights Reserved.</p>
+        <p><a href="https://cosmohentorq.com" target="_blank" rel="noopener">cosmohentorq.com ↗</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Executive Summary Modal -->
+  <div id="execModal" class="modal" style="display:none;">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-box glass-card">
+      <div class="modal-header">
+        <h3>Executive Summary</h3>
+        <button class="modal-close" id="modalClose">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="execModalBody"></div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="copyExecBtn">Copy Text</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden print-only report -->
+  <div id="printReport" style="display:none;">
+    <div id="printContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
